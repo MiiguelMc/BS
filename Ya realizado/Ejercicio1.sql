@@ -1,0 +1,5 @@
+CREATE TABLE pais (
+idPais INT IDENTITY (1,1),
+nombrePais VARCHAR(55) NOT NULL,
+CONSTRAINT pk_pais PRIMARY KEY (idPais),
+);

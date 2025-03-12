@@ -1,0 +1,2 @@
+ALTER TABLE pais
+ADD CONSTRAINT UQ_Nombre_Pais UNIQUE (nombrePais);

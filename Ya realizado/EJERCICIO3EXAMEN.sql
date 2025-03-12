@@ -1,0 +1,9 @@
+/*Miguel Macias del Pino*/
+CREATE LOGIN OAK 
+WITH PASSWORD = 'profesor' ;
+
+CREATE USER OAK
+FOR LOGIN OAK;
+
+GRANT SELECT , INSERT
+TO OAK

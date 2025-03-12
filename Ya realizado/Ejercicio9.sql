@@ -1,0 +1,2 @@
+ALTER TABLE trabajo
+ADD CONSTRAINT DF_Salario_Minimo DEFAULT 1500 FOR salarioMin;
