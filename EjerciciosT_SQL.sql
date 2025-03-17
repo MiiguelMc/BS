@@ -128,7 +128,8 @@ WHERE asignatura.nombre = @asignaturaespecifica AND persona.sexo = 'M'
   ELSE
      PRINT 'Profesor que imparte la signatura '+@AsignaturaDada+': '+@Profesor
 --Ejercicio10--
-DECLARE @Alumnomat NVARCHAR (100)= 'Salvador Sánchez';
+DECLARE @Alumnombr NVARCHAR (100)= 'Salvador';
+DECLARE @Alumnoape NVARCHAR (100)='Sánchez';
 DECLARE @asignaturamat NVARCHAR(100)='Álgegra lineal y matemática discreta'
 
 DECLARE @Estaono NVARCHAR (100)=(
@@ -136,8 +137,9 @@ SELECT COUNT(*)
 FROM persona 
 INNER JOIN alumno_se_matricula_asignatura ON persona.id=alumno_se_matricula_asignatura.id_alumno
 INNER JOIN asignatura ON alumno_se_matricula_asignatura.id_asignatura=asignatura.id
-WHERE asignatura.nombre = @asignaturamat and persona.nombre = @Alumnomat)
+WHERE asignatura.nombre = @asignaturamat and persona.nombre = @Alumnombr and persona.apellido1 =@Alumnoape)
 IF(@Estaono = 0)
-PRINT 'El Estudiante'+ @Alumnomat + 'No esta matriculado en '+@asignaturamat
+PRINT 'El Estudiante '+ @Alumnombr +' '+@Alumnoape+ ' No esta matriculado en '+@asignaturamat
 ELSE
-PRINT 'El Estudiante'+ @Alumnomat + 'Si esta matriculado en '+@asignaturamat
+PRINT 'El Estudiante '+ @Alumnombr +' ' +@Alumnoape+' Si esta matriculado en '+@asignaturamat
+
